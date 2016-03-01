@@ -13,7 +13,10 @@ RUN set -ex \
 	&& python setup.py install \
 	&& cd .. && rm -r beatbox* \
 	&& git clone https://github.com/solenopsis/Solenopsis.git \
-	&& cd Solenopsis && ./install.sh 
+	&& cd Solenopsis && ./install.sh \
+	&& curl -fSL https://eu4.salesforce.com/dwnld/SfdcAnt/salesforce_ant_36.0.zip -o sf.zip \
+	&& unzip sf.zip ant-salesforce.jar \
+	&& rm *.zip
 
 
 
