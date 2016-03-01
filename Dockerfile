@@ -15,10 +15,6 @@ RUN set -ex \
 	&& git clone https://github.com/solenopsis/Solenopsis.git \
 	&& cd Solenopsis && ./install.sh \
 	&& curl -fSL https://eu4.salesforce.com/dwnld/SfdcAnt/salesforce_ant_36.0.zip -o sf.zip \
-	&& unzip sf.zip ant-salesforce.jar \
+	&& mkdir -p /usr/share/ant/lib \
+	&& unzip sf.zip ant-salesforce.jar -d /usr/share/ant/lib \
 	&& rm *.zip
-
-
-
-	
-
